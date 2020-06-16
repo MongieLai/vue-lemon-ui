@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MongieLai/zaolunzi/issues"
   },
-  "homepage": "https://github.com/MongieLai/zaolunzi#readme"
+  "homepage": "https://github.com/MongieLai/zaolunzi#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }

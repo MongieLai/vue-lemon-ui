@@ -11,7 +11,16 @@
  
  <script>
 export default {
-  props: ["icon", "iconPosition"],
+  props: {
+    icon: {},
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        return value === "left" || value === "right";
+      }
+    }
+  },
   computed: {
     iconName() {
       return `#l-${this.icon}`;
@@ -31,7 +40,7 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  vertical-align:middle;
+  vertical-align: middle;
   > .content {
     order: 2;
   }

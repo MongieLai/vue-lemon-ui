@@ -32,6 +32,14 @@
     body {
         font-size: var(--font-size)
     }
+
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
 </style>
 
 <style>
@@ -40,9 +48,11 @@
 
 <body>
     <div id="app">
-        <l-button> </l-button>
+        <l-button icon="setting">点击</l-button>
+        <l-button icon="setting" icon-position="right">收到</l-button>
     </div>
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_1906917_kfyo1r75lbb.js"></script>
 </body>
 
 </html>

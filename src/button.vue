@@ -1,7 +1,7 @@
  <template>
   <button class="l-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
-    <l-icon class="loading" v-if="loading" name="loading"></l-icon>
-    <l-icon class="icon" v-if="icon" :name="icon"></l-icon>
+    <l-icon class="loading icon" v-if="loading" name="loading"></l-icon>
+    <l-icon class="icon" v-if="icon&&!loading" :name="icon"></l-icon>
     <div class="content">
       <slot />
     </div>
@@ -74,6 +74,7 @@ export default {
     }
   }
   &:hover {
+    z-index: 1;
     border-color: var(--border-color-hover);
   }
 

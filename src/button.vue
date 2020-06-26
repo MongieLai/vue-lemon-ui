@@ -1,5 +1,6 @@
  <template>
   <button class="l-button" :class="{[`icon-${iconPosition}`]:true}">
+    <l-icon class="loading" name="loading"></l-icon>
     <l-icon class="icon" v-if="icon" :name="icon"></l-icon>
     <div class="content">
       <slot />
@@ -28,6 +29,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes fuck {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: fuck 1s infinite linear;
+}
 .l-button {
   font-size: var(--font-sizeƒ);
   height: var(--button--height);

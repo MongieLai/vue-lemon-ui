@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-    :root {
-        --button--height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --color: #999;
-        --border-radius: 4px;
-        --border-color: #999;
-        --border-color-hover: #666;
-    }
+		:root {
+			--button--height: 32px;
+			--font-size: 14px;
+			--button-bg: white;
+			--button-active-bg: #eee;
+			--color: #999;
+			--border-radius: 4px;
+			--border-color: #999;
+			--border-color-hover: #666;
+		}
 
-    #app {
-        margin: 20px;
-    }
+		#app {
+			margin: 20px;
+		}
 
-    body {
-        font-size: var(--font-size)
-    }
+		body {
+			font-size: var(--font-size)
+		}
 
-    .icon {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
-    }
-</style>
+		.icon {
+			width: 1em;
+			height: 1em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	</style>
 
-<style>
+	<style>
 
-</style>
+	</style>
 
-<body>
-    <div id="app">
-        <l-button icon="setting">点击</l-button>
-        <l-button>点击</l-button>
-        <l-button icon="left" @click="loading1=!loading1" :loading="loading1" icon-position="right">收到</l-button>
-        <l-button icon="download" icon-position="left">收到</l-button>
-        <l-button-group>
-            <l-button icon="download" icon-position="left">收到</l-button>
-            <l-button icon="download" icon-position="left">收到</l-button>
-        </l-button-group>
-    </div>
-    <div id="test"></div>
-    <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1906917_rpv8th18zz.js"></script>
-</body>
+	<body>
+		<div id="app">
+			<l-button icon="setting">点击</l-button>
+			<l-button>点击</l-button>
+			<l-button icon="left" @click="loading1=!loading1" :loading="loading1" icon-position="right">收到</l-button>
+			<l-button icon="download" icon-position="left">收到</l-button>
+			<l-button-group>
+				<l-button icon="download" icon-position="left">收到</l-button>
+				<l-button icon="download" icon-position="left">收到</l-button>
+			</l-button-group>
+			<l-input value="hahah"></l-input>
+			<l-input value="hahah" error="jjj"></l-input>
+			<l-input value="hahah" disabled></l-input>
+			<l-input value="hahah" readonly></l-input>
+		</div>
+		<script src="./src/app.js"></script>
+		<script src="//at.alicdn.com/t/font_1906917_b7gf46r58hn.js"></script>
+	</body>
 
 </html>

@@ -12,9 +12,9 @@ describe('Button', () => {
     it('可以设置icon.', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-        propsData: {
-            icon: 'settings'
-        }
+            propsData: {
+                icon: 'settings'
+            }
         }).$mount()
         const useElement = vm.$el.querySelector('use')
         expect(useElement.getAttribute('xlink:href')).to.equal('#l-settings')
@@ -23,10 +23,10 @@ describe('Button', () => {
     it('可以设置loading.', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-        propsData: {
-            icon: 'settings',
-            loading: true
-        }
+            propsData: {
+                icon: 'settings',
+                loading: true
+            }
         }).$mount()
         const useElements = vm.$el.querySelectorAll('use')
         expect(useElements.length).to.equal(1)
@@ -38,9 +38,9 @@ describe('Button', () => {
         document.body.appendChild(div)
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-        propsData: {
-            icon: 'settings',
-        }
+            propsData: {
+                icon: 'settings',
+            }
         }).$mount(div)
         const icon = vm.$el.querySelector('svg')
         expect(getComputedStyle(icon).order).to.eq('1')
@@ -52,10 +52,10 @@ describe('Button', () => {
         document.body.appendChild(div)
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-        propsData: {
-            icon: 'settings',
-            iconPosition: 'right'
-        }
+            propsData: {
+                icon: 'settings',
+                iconPosition: 'right'
+            }
         }).$mount(div)
         const icon = vm.$el.querySelector('svg')
         expect(getComputedStyle(icon).order).to.eq('2')
@@ -65,9 +65,9 @@ describe('Button', () => {
     it('点击 button 触发 click 事件', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
-        propsData: {
-            icon: 'settings',
-        }
+            propsData: {
+                icon: 'settings',
+            }
         }).$mount()
 
         const callback = sinon.fake();

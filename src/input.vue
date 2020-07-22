@@ -2,6 +2,9 @@
   <div class="wrapper" :class="{error}">
     <input
       @input="$emit('input',$event.target.value)"
+      @change="$emit('change',$event.target.value)"
+      @focus="$emit('focus',$event.target.value)"
+      @blur="$emit('blur',$event.target.value)"
       spellcheck="false"
       :value="value"
       type="text"

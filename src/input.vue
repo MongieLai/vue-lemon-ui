@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper" :class="{error}">
     <input
+      @input="$emit('input',$event.target.value)"
       spellcheck="false"
       :value="value"
       type="text"

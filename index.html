@@ -42,8 +42,6 @@
 	}
 
 	.row {
-		margin: 20px;
-		padding: 20px;
 		border: 1px #333 solid;
 	}
 </style>
@@ -73,7 +71,15 @@
 		</div>
 
 		<div class="row">
-			<l-row value="jkjkj"></l-row>
+			<l-row value="jkjkj">
+				<l-col>1</l-col>
+				<l-col>2</l-col>
+			</l-row>
+			<l-row value="jkjkj">
+				<l-col span='2'>1</l-col>
+				<l-col :span='2'>2</l-col>
+				<l-col :span='20'>2</l-col>
+			</l-row>
 		</div>
 
 	</div>

@@ -1,7 +1,6 @@
 <template>
   <div class="row">
     <slot></slot>
-    {{value}}
   </div>
 </template>
 

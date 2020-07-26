@@ -63,7 +63,7 @@ export default {
     order: 2;
   }
   > .icon {
-    order: 1;
+    order: 1; 
     margin-right: 0.3em;
   }
   &.icon-right {

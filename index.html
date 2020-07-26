@@ -40,10 +40,6 @@
 		fill: currentColor;
 		overflow: hidden;
 	}
-
-	.row {
-		border: 1px #333 solid;
-	}
 </style>
 
 <style>
@@ -71,14 +67,13 @@
 		</div>
 
 		<div class="row">
-			<l-row value="jkjkj">
+			<l-row gutter='20'>
 				<l-col>1</l-col>
 				<l-col>2</l-col>
 			</l-row>
-			<l-row value="jkjkj">
-				<l-col span='2'>1</l-col>
-				<l-col :span='2'>2</l-col>
-				<l-col :span='20'>2</l-col>
+			<l-row>
+				<l-col>1</l-col>
+				<l-col>2</l-col>
 			</l-row>
 		</div>
 

@@ -46,7 +46,7 @@ export default {
   computed: {
     colClasses() {
       const { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
-      const {createClasses} = this;
+      const { createClasses } = this;
       return [
         ...createClasses({ span, offset }),
         ...createClasses(phone, "phone-"),

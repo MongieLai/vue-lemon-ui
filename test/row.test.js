@@ -6,12 +6,9 @@ import Col from '../src/col'
 Vue.config.productionTip = false
 Vue.config.devtools = false
 
-describe('row', () => {
+describe('Row', () => {
     it('Row存在.', () => {
         expect(Row).to.be.exist
-    })
-    it('Col存在.', () => {
-        expect(Col).to.be.exist
     })
     it('row组件接收gutter属性.', (done) => {
         Vue.component('l-row', Row)

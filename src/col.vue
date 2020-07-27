@@ -28,16 +28,31 @@ export default {
   data() {
     return { gutter: 0 };
   },
+  methods: {
+    createClasses(obj, str = "") {
+      if (!obj) {
+        return [];
+      }
+      let tempArr = [];
+      if (obj.span) {
+        tempArr.push(`col-${str}${obj.span}`);
+      }
+      if (obj.offset) {
+        tempArr.push(`offset-${str}${obj.offset}`);
+      }
+      return tempArr;
+    }
+  },
   computed: {
     colClasses() {
-      let { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
+      const { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
+      const {createClasses} = this;
       return [
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-        ...(phone ? [`col-phone-${phone.span}`] : []),
-        ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-        ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-        ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
+        ...createClasses({ span, offset }),
+        ...createClasses(phone, "phone-"),
+        ...createClasses(ipad, "ipad-"),
+        ...createClasses(narrowPc, "narrow-pc-"),
+        ...createClasses(widePc, "wide-pc-")
       ];
     },
     colStyle() {

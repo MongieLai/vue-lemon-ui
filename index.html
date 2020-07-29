@@ -40,6 +40,11 @@
 		fill: currentColor;
 		overflow: hidden;
 	}
+
+	.demo {
+		border: 1px red solid;
+		min-height: 100px;
+	}
 </style>
 
 <style>
@@ -67,8 +72,8 @@
 		</div>
 
 		<div class="row">
-			<l-row gutter='20'  align='center'>
-				<l-col :span='4' :phone='{span:12}' :ipad='{span:10}'  :wide-pc='{span:2}'>
+			<l-row gutter='20' align='center'>
+				<l-col :span='4' :phone='{span:12}' :ipad='{span:10}' :wide-pc='{span:2}'>
 					1 </l-col>
 				<l-col :span='20' :phone='{span:12}' :ipad='{span:14}' :wide-pc='{span:22}'>2
 				</l-col>
@@ -76,13 +81,13 @@
 		</div>
 
 		<div class="row">
-			<l-layout>
-				<l-header></l-header>
-				<l-layout>
-					<l-sider></l-sider>
-					<l-content></l-content>
+			<l-layout class="demo" style="height:100vh">
+				<l-sider class="demo">侧边栏</l-sider>
+				<l-layout class="demo">
+					<l-header class="demo">头部</l-header>
+					<l-content class="demo">内容区域</l-content>
+					<l-footer class="demo">脚步</l-footer>
 				</l-layout>
-				<l-footer></l-footer>
 			</l-layout>
 		</div>
 

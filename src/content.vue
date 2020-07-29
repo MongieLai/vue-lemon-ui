@@ -1,6 +1,6 @@
 <template>
-    <div>
-        这是Content
+    <div class="content">
+        <slot></slot>
     </div>
 </template>
 
@@ -11,5 +11,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.content{
+    flex-grow: 1;
+}
 </style>

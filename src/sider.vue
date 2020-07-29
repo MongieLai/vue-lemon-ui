@@ -1,15 +1,14 @@
 <template>
-    <div>
-        这是sider
-    </div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+  name: "lemon-sider"
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

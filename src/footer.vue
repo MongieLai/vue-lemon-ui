@@ -1,6 +1,6 @@
 <template>
     <div>
-        这是footer
+        <slot></slot>
     </div>
 </template>
 

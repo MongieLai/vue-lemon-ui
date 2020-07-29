@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        这是Header
+        <slot></slot>
     </div>
 </template>
 

@@ -29,10 +29,10 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
+  overflow: hidden;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border: 1px blue solid;
   &.hasSider {
     flex-direction: row;
   }

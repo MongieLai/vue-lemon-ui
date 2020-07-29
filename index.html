@@ -41,9 +41,16 @@
 		overflow: hidden;
 	}
 
-	.demo {
-		border: 1px red solid;
-		min-height: 100px;
+	.sider{
+		width: 200px;
+		background-color: #333;
+	}
+	.header{
+		background-color: #666;
+	}
+
+	.footer{
+		background-color: #666;
 	}
 </style>
 
@@ -81,12 +88,12 @@
 		</div>
 
 		<div class="row">
-			<l-layout class="demo" style="height:100vh">
-				<l-sider class="demo">侧边栏</l-sider>
-				<l-layout class="demo">
-					<l-header class="demo">头部</l-header>
-					<l-content class="demo">内容区域</l-content>
-					<l-footer class="demo">脚步</l-footer>
+			<l-layout style="height:100vh">
+				<l-sider>侧边栏</l-sider>
+				<l-layout>
+					<l-header>头部</l-header>
+					<l-content></l-content>内容区域</l-content>
+					<l-footer>脚步</l-footer>
 				</l-layout>
 			</l-layout>
 		</div>

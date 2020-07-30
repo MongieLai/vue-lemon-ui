@@ -39,24 +39,15 @@ new Vue({
         xxx(e) {
             console.log(e)
         },
-        hh1() {
-            this.hh('top')
-        }
-        , hh2() {
-            this.hh('middle')
-        }
-        , hh3() {
-            this.hh('bottom')
-        },
-        hh(options) {
+        hh() {
             this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字', {
                 closeButton: {
                     message: '关闭',
-                    callBack: () => {
+                    callback: () => {
                         console.log('123123123')
                     }
                 },
-                position: options,
+                position: 'middle',
                 autoClose: false
             })
         }

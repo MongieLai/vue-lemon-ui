@@ -17,19 +17,18 @@ export default {
   name: `LemonToast`,
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 2
+      type: [Boolean, Number],
+      default: 1,
+      validator(value){
+          return value === false || typeof value === 'number'
+      }
     },
     closeButton: {
       type: Object,
       default() {
         return {
           message: "关闭",
-          callBack: undefined
+          callback: undefined
         };
       }
     },
@@ -61,7 +60,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.toastClose();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     updateStyles() {
@@ -79,7 +78,6 @@ export default {
     clickClose() {
       this.toastClose();
       const { closeButton } = this;
-      console.log(typeof closeButton.callBack);
       if (closeButton && typeof closeButton.callBack === "function") {
         this.closeButton.callBack(this);
       }

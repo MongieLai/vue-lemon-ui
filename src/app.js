@@ -18,14 +18,14 @@ Vue.component('l-button', Button)
 Vue.component('l-icon', Icon)
 Vue.component('l-button-group', ButtonGroup)
 Vue.component('l-input', Input)
-Vue.component('l-row',Row)
-Vue.component('l-col',Col)
-Vue.component('l-layout',Col)
-Vue.component('l-layout',Layout)
-Vue.component('l-header',Header)
-Vue.component('l-content',Content)
-Vue.component('l-sider',Sider)
-Vue.component('l-footer',Footer)
+Vue.component('l-row', Row)
+Vue.component('l-col', Col)
+Vue.component('l-layout', Col)
+Vue.component('l-layout', Layout)
+Vue.component('l-header', Header)
+Vue.component('l-content', Content)
+Vue.component('l-sider', Sider)
+Vue.component('l-footer', Footer)
 
 new Vue({
     el: '#app',
@@ -39,8 +39,15 @@ new Vue({
         xxx(e) {
             console.log(e)
         },
-        hh(){
-            this.$toast('??????????')
+        hh() {
+            this.$toast('??????????', {
+                closeButton: {
+                    message: '妈的',
+                    callBack: () => {
+                        console.log('123123123')
+                    }
+                }
+            })
         }
     }
 })

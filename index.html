@@ -41,15 +41,16 @@
 		overflow: hidden;
 	}
 
-	.sider{
+	.sider {
 		width: 200px;
 		background-color: #333;
 	}
-	.header{
+
+	.header {
 		background-color: #666;
 	}
 
-	.footer{
+	.footer {
 		background-color: #666;
 	}
 </style>
@@ -70,7 +71,11 @@
 				<l-button icon="download" icon-position="left">收到</l-button>
 			</l-button-group>
 		</div>
-
+		<div class="row">
+			<button @click='hh1'>1</button>
+			<button @click='hh2'>2</button>
+			<button @click='hh3'>3</button>
+		</div>
 		<div class="row">
 			<l-input value="错误状态" error=这是一个错误状态></l-input>
 			<l-input v-model='inputMessage'></l-input>
@@ -98,9 +103,7 @@
 			</l-layout>
 		</div>
 
-		<div class="row">
-			<button @click='hh'>1212</button>
-		</div>
+
 	</div>
 	<script src="./src/app.js"></script>
 	<script src="//at.alicdn.com/t/font_1906917_b7gf46r58hn.js"></script>

@@ -47,6 +47,8 @@ new Vue({
                         console.log('123123123')
                     }
                 },
+                // position: '',
+                autoClose: false
             })
         }
     }

@@ -10,6 +10,9 @@ import Header from './header.vue'
 import Footer from './footer.vue'
 import Content from './content.vue'
 import Sider from './sider.vue'
+import plugin from './plugin'
+
+Vue.use(plugin)
 
 Vue.component('l-button', Button)
 Vue.component('l-icon', Icon)
@@ -35,6 +38,9 @@ new Vue({
     methods: {
         xxx(e) {
             console.log(e)
+        },
+        hh(){
+            this.$toast('??????????')
         }
     }
 })

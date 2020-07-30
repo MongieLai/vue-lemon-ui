@@ -7,7 +7,7 @@
       </div>
 
       <div class="line" ref="line"></div>
-      <span v-if="closeButton" @click="clickClose()">{{closeButton.message}}</span>
+      <span class="close" v-if="closeButton" @click="clickClose()">{{closeButton.message}}</span>
     </div>
   </div>
 </template>
@@ -19,8 +19,8 @@ export default {
     autoClose: {
       type: [Boolean, Number],
       default: 1,
-      validator(value){
-          return value === false || typeof value === 'number'
+      validator(value) {
+        return value === false || typeof value === "number";
       }
     },
     closeButton: {
@@ -78,8 +78,8 @@ export default {
     clickClose() {
       this.toastClose();
       const { closeButton } = this;
-      if (closeButton && typeof closeButton.callBack === "function") {
-        this.closeButton.callBack(this);
+      if (this.closeButton && typeof this.closeButton.callback === "function") {
+        this.closeButton.callback(this);
       }
     }
   }
@@ -163,7 +163,7 @@ $animation-delay: 500ms;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     border-radius: 4px;
 
-    > span {
+    > .close {
       padding-left: 16px;
       flex-shrink: 0;
     }

@@ -25,22 +25,6 @@ describe('Toast', () => {
                 done()
             })
         })
-        // it('接受closeButton', () => {
-        //     const callback = sinon.fake();
-        //     const vm = new ToastConstructor({
-        //         propsData: {
-        //             closeButton: {
-        //                 message: 'close',
-        //                 callback
-        //             }
-        //         }
-        //     }).$mount()
-        //     const closeButton = vm.$el.querySelector('span')
-        //     expect(closeButton.textContent.trim()).to.eq('close')
-        //     console.log(closeButton)
-        //     closeButton.click()
-        //     expect(callback).to.have.been.called
-        // })
 
         it('接受 closeButton', () => {
             const callback = sinon.fake();

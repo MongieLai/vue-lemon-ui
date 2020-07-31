@@ -32,6 +32,9 @@ export default {
   },
   methods: {},
   mounted() {
+    if (this.$children.length === 0) {
+      console && console.log && console.warn("tabs没有子组件，且子组件应该为l-tabs-head和l-tabs-body");
+    }
     this.$children.forEach(vm => {
       if (vm.$options.name === "LemonTabsHead") {
         vm.$children.forEach(item => {
@@ -49,6 +52,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs {
-}
 </style>

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "LemoTabsItem",
   data() {
     return {
       active: false
@@ -29,20 +30,22 @@ export default {
     }
   },
   created() {
-    this.eventBus.$on("update:selected", name => {
+    this.eventBus.$on("update:selected", (name, vm) => {
       this.active = name === this.name;
+      console.log(vm);
     });
   },
   inject: ["eventBus"],
   methods: {
     clickItem() {
-      this.eventBus.$emit("update:selected", this.name);
+      this.eventBus.$emit("update:selected", this.name, this);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+$blue: blue;
 .tabs-item {
   cursor: pointer;
   flex-shrink: 0;
@@ -51,7 +54,8 @@ export default {
   display: flex;
   align-items: center;
   &.active {
-    border: 1px solid red;
+    color: $blue;
+    font-weight: bold;
   }
 }
 </style>

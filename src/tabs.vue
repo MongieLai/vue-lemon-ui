@@ -32,7 +32,18 @@ export default {
   },
   methods: {},
   mounted() {
-    this.eventBus.$emit("update:selected", this.selected);
+    this.$children.forEach(vm => {
+      if (vm.$options.name === "LemonTabsHead") {
+        vm.$children.forEach(item => {
+          if (
+            item.$options.name === "LemoTabsItem" &&
+            item.name === this.selected
+          ) {
+            this.eventBus.$emit("update:selected", this.selected, item);
+          }
+        });
+      }
+    });
   }
 };
 </script>

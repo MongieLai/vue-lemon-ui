@@ -10,7 +10,12 @@ import Header from './header.vue'
 import Footer from './footer.vue'
 import Content from './content.vue'
 import Sider from './sider.vue'
-import plugin from './plugin'
+import plugin from './plugin.js'
+import Tabs from './tabs.vue'
+import TabsHead from './tabs-head.vue'
+import TabsItem from './tabs-item.vue'
+import TabsBody from './tabs-body.vue'
+import TabsPane from './tabs-pane.vue'
 
 Vue.use(plugin)
 
@@ -26,13 +31,20 @@ Vue.component('l-header', Header)
 Vue.component('l-content', Content)
 Vue.component('l-sider', Sider)
 Vue.component('l-footer', Footer)
+Vue.component('l-tabs-head', TabsHead)
+Vue.component('l-tabs-item', TabsItem)
+Vue.component('l-tabs-body', TabsBody)
+Vue.component('l-tabs-pane', TabsPane)
+Vue.component('l-tabs', Tabs)
+
 
 new Vue({
     el: '#app',
     data() {
         return {
             loading1: true,
-            inputMessage: 'test'
+            inputMessage: 'test',
+            selectedTab:'sports'
         }
     },
     methods: {

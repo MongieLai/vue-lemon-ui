@@ -32,7 +32,8 @@ export default {
   created() {
     this.eventBus.$on("update:selected", (name, vm) => {
       this.active = name === this.name;
-      console.log(vm);
+      // const { width, left } = vm.$el.getBoundingClientRect();
+      // this.$refs.line.style.width = `${width}px`;
     });
   },
   inject: ["eventBus"],

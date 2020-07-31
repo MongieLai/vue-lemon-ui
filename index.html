@@ -97,7 +97,7 @@
 				</l-layout>
 			</l-layout>
 		</div> -->
-		<l-tabs :selected.sync='selectedTab'>
+		<!-- <l-tabs :selected.sync='selectedTab'>
 			<l-tabs-head>
 				<template slot="actions">
 					<button>设置</button>
@@ -111,7 +111,14 @@
 				<l-tabs-pane name='news'>习近平今天</l-tabs-pane>
 				<l-tabs-pane name='sports'>Nba</l-tabs-pane>
 			</l-tabs-body>
-		</l-tabs>
+		</l-tabs> -->
+
+		<l-popover style="margin: 100px;">
+			<template slot='content'>
+				<div>1212</div>
+			</template>
+			<button>点我</button>
+		</l-popover>
 
 	</div>
 	<script src="./src/app.js"></script>

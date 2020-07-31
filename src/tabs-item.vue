@@ -25,12 +25,13 @@ export default {
   computed: {
     classes() {
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       };
     }
   },
   created() {
-    this.eventBus.$on("update:selected", (name, vm) => {
+    this.eventBus.$on("update:selected", name => {
       this.active = name === this.name;
       // const { width, left } = vm.$el.getBoundingClientRect();
       // this.$refs.line.style.width = `${width}px`;
@@ -39,6 +40,9 @@ export default {
   inject: ["eventBus"],
   methods: {
     clickItem() {
+      if (this.disabled) {
+        return;
+      }
       this.eventBus.$emit("update:selected", this.name, this);
     }
   }
@@ -57,6 +61,10 @@ $blue: blue;
   &.active {
     color: $blue;
     font-weight: bold;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
 </style>

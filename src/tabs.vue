@@ -1,11 +1,11 @@
 <template>
-  <div class="tabs" @click="clickTab">
+  <div class="tabs">
     <slot></slot>
-    <div>wwwwwwwww</div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
 export default {
   props: {
     selected: {
@@ -20,10 +20,19 @@ export default {
       }
     }
   },
-  methods: {
-    clickTab() {
-      this.$emit("update:selected", "heihei");
-    }
+  provide() {
+    return {
+      eventBus: this.eventBus
+    };
+  },
+  data() {
+    return {
+      eventBus: new Vue()
+    };
+  },
+  methods: {},
+  mounted() {
+    this.eventBus.$emit("update:selected", this.selected);
   }
 };
 </script>

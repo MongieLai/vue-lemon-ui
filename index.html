@@ -25,9 +25,6 @@
 		--border-color-hover: #666;
 	}
 
-	#app {
-		margin: 20px;
-	}
 
 	body {
 		font-size: var(--font-size)
@@ -100,21 +97,21 @@
 				</l-layout>
 			</l-layout>
 		</div> -->
-		<div class="row">
-			<l-tabs :selected.sync='selectedTab'>
-				<l-tabs-head>
-					<!--等价于 <l-tabs-head :selected='selectedTab' @update:selected='selectedTab=$event'> -->
-					<l-tabs-head>
-						<template slot="actions">121321</template>
-						<l-tabs-item name='news' disabled>新闻</l-tabs-item>
-						<l-tabs-item name='sports'>体育</l-tabs-item>
-					</l-tabs-head>
-					<l-tabs-body>
-						<l-tabs-pane name='news'>习近平今天</l-tabs-pane>
-						<l-tabs-pane name='sports'>Nba</l-tabs-pane>
-					</l-tabs-body>
-			</l-tabs>
-		</div>
+		<l-tabs :selected.sync='selectedTab'>
+			<l-tabs-head>
+				<template slot="actions">
+					<button>设置</button>
+				</template>
+				<l-tabs-item name='news' disabled>
+					<l-icon name='setting'></l-icon>新闻
+				</l-tabs-item>
+				<l-tabs-item name='sports'>体育</l-tabs-item>
+			</l-tabs-head>
+			<l-tabs-body>
+				<l-tabs-pane name='news'>习近平今天</l-tabs-pane>
+				<l-tabs-pane name='sports'>Nba</l-tabs-pane>
+			</l-tabs-body>
+		</l-tabs>
 
 	</div>
 	<script src="./src/app.js"></script>

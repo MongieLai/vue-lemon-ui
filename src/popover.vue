@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <span ref="triggerWrapper" style="display:inline-block">
       <slot></slot>
     </span>
@@ -99,6 +99,7 @@ export default {
       });
     },
     onClick(event) {
+      console.log("irun");
       if (this.$refs.triggerWrapper.contains(event.target)) {
         if (this.visible === true) {
           this.close();
@@ -145,6 +146,7 @@ $border-radius: 4px;
 
     &::before,
     &::after {
+      border-bottom: none;
       left: 10px;
     }
     &::before {
@@ -159,7 +161,10 @@ $border-radius: 4px;
 
   &.position-bottom {
     margin-top: 10px;
-
+    &::before,
+    &::after {
+      border-top: none; 
+    }
     &::before {
       bottom: 100%;
       border-bottom-color: black;
@@ -175,6 +180,7 @@ $border-radius: 4px;
     margin-left: -10px;
     &::before,
     &::after {
+      border-right: none;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -193,6 +199,7 @@ $border-radius: 4px;
     margin-left: 10px;
     &::before,
     &::after {
+      border-left: none;
       top: 50%;
       transform: translateY(-50%);
     }

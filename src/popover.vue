@@ -9,7 +9,7 @@
       ref="contentWrapper"
       v-if="visible"
     >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
   </div>
 </template>
@@ -163,7 +163,7 @@ $border-radius: 4px;
     margin-top: 10px;
     &::before,
     &::after {
-      border-top: none; 
+      border-top: none;
     }
     &::before {
       bottom: 100%;

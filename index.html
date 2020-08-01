@@ -114,8 +114,9 @@
 		</l-tabs> -->
 
 		<l-popover position='top' style="margin: 100px;">
-			<template slot='content'>
+			<template slot='content' slot-scope='{close}'>
 				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
+				<l-button @click='close'>点我关闭</l-button>
 			</template>
 			<l-button>点我</button>
 		</l-popover>
@@ -142,7 +143,7 @@
 		</l-popover>
 
 
-		
+
 		<l-popover trigger='hover' position='top' style="margin: 100px;">
 			<template slot='content'>
 				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>

@@ -99,7 +99,6 @@ export default {
       });
     },
     onClick(event) {
-      console.log("irun");
       if (this.$refs.triggerWrapper.contains(event.target)) {
         if (this.visible === true) {
           this.close();

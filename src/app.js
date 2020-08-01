@@ -17,6 +17,8 @@ import TabsItem from './tabs-item.vue'
 import TabsBody from './tabs-body.vue'
 import TabsPane from './tabs-pane.vue'
 import Popover from './popover.vue'
+import Collapse from './collapse.vue'
+import CollapseItem from './collapse-item.vue'
 
 Vue.use(plugin)
 
@@ -38,6 +40,8 @@ Vue.component('l-tabs-body', TabsBody)
 Vue.component('l-tabs-pane', TabsPane)
 Vue.component('l-tabs', Tabs)
 Vue.component('l-popover', Popover)
+Vue.component('l-collapse', Collapse)
+Vue.component('l-collapse-item', CollapseItem)
 
 
 new Vue({
@@ -46,7 +50,8 @@ new Vue({
         return {
             loading1: true,
             inputMessage: 'test',
-            selectedTab: 'sports'
+            selectedTab: 'sports',
+            selectedTab2: ['1']
         }
     },
     methods: {

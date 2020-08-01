@@ -3,7 +3,12 @@
     <span ref="triggerWrapper" style="display:inline-block">
       <slot></slot>
     </span>
-    <div class="content-wrapper" ref="contentWrapper" v-if="visible">
+    <div
+      class="content-wrapper"
+      :class="{[`position-${position}`]:true}"
+      ref="contentWrapper"
+      v-if="visible"
+    >
       <slot name="content"></slot>
     </div>
   </div>
@@ -29,15 +34,28 @@ export default {
   },
   methods: {
     positionContent() {
-      document.body.appendChild(this.$refs.contentWrapper);
-      let {
-        width,
-        height,
-        left,
-        top,
-      } = this.$refs.triggerWrapper.getBoundingClientRect();
-      this.$refs.contentWrapper.style.left = `${left + window.scrollX}px`;
-      this.$refs.contentWrapper.style.top = `${top + window.scrollY}px`;
+      let { contentWrapper, triggerWrapper } = this.$refs;
+      document.body.appendChild(contentWrapper);
+      let { width, height, left, top } = triggerWrapper.getBoundingClientRect();
+      if (this.position === "top") {
+        contentWrapper.style.left = `${left + window.scrollX}px`;
+        contentWrapper.style.top = `${top + window.scrollY}px`;
+      } else if (this.position === "bottom") {
+        contentWrapper.style.left = `${left + window.scrollX}px`;
+        contentWrapper.style.top = `${top + height + window.scrollY}px`;
+      } else if (this.position === "left") {
+        contentWrapper.style.left = `${left + window.scrollX}px`;
+        let { height: height2 } = contentWrapper.getBoundingClientRect();
+        contentWrapper.style.top = `${
+          top + window.scrollY + (height - height2) / 2
+        }px`;
+      } else if (this.position === "right") {
+        contentWrapper.style.left = `${left + window.scrollX + width}px`;
+        let { height: height2 } = contentWrapper.getBoundingClientRect();
+        contentWrapper.style.top = `${
+          top + window.scrollY + (height - height2) / 2
+        }px`;
+      }
     },
     onClickDocument(e) {
       if (this.$refs.popover && this.$refs.popover.contains(e.target)) {
@@ -87,14 +105,13 @@ $border-radius: 4px;
   position: absolute;
   border: 1px $border-color solid;
   /* box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); */
-  filter:drop-shadow( 0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
   background: white;
-  transform: translateY(-100%);
   border-radius: $border-radius;
   padding: 0.5em 1em;
-  margin-top: -10px;
   max-width: 20em;
   word-break: break-all;
+
   &::before,
   &::after {
     content: "";
@@ -103,15 +120,72 @@ $border-radius: 4px;
     height: 0;
     width: 0;
     position: absolute;
-    left: 10px;
   }
-  &::before {
-    top: 100%;
-    border-top-color: black;
+  &.position-top {
+    transform: translateY(-100%);
+    margin-top: -10px;
+
+    &::before,
+    &::after {
+      left: 10px;
+    }
+    &::before {
+      top: 100%;
+      border-top-color: black;
+    }
+    &::after {
+      border-top-color: white;
+      top: calc(100% - 1px);
+    }
   }
-  &::after {
-    border-top-color: white;
-    top: calc(100% - 1px);
+
+  &.position-bottom {
+    margin-top: 10px;
+
+    &::before {
+      bottom: 100%;
+      border-bottom-color: black;
+    }
+    &::after {
+      border-bottom-color: white;
+      bottom: calc(100% - 1px);
+    }
+  }
+
+  &.position-left {
+    transform: translateX(-100%);
+    margin-left: -10px;
+    &::before,
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
+      left: 100%;
+      border-left-color: black;
+    }
+    &::after {
+      left: 100%;
+      border-left-color: white;
+      left: calc(100% - 1px);
+    }
+  }
+
+  &.position-right {
+    margin-left: 10px;
+    &::before,
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
+      right: 100%;
+      border-right-color: black;
+    }
+    &::after {
+      border-right-color: white;
+      right: calc(100% - 1px);
+    }
   }
 }
 </style>

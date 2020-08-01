@@ -25,12 +25,28 @@ export default {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       },
     },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      },
+    },
   },
 
   data() {
     return {
       visible: false,
     };
+  },
+  mounted() {
+    const { popover } = this.$refs;
+    if (this.trigger === "click") {
+      popover.addEventListener("click", this.onClick);
+    } else {
+      popover.addEventListener("mouseenter", this.open);
+      popover.addEventListener("mouseleave", this.close);
+    }
   },
   methods: {
     positionContent() {
@@ -56,23 +72,6 @@ export default {
           top: `${top + window.scrollY + (height - height2) / 2}px`,
         },
       };
-      // if (this.position === "top") {
-      //   contentWrapper.style.left = `${left + window.scrollX}px`;
-      //   contentWrapper.style.top = `${top + window.scrollY}px`;
-      // } else if (this.position === "bottom") {
-      //   contentWrapper.style.left = `${left + window.scrollX}px`;
-      //   contentWrapper.style.top = `${top + height + window.scrollY}px`;
-      // } else if (this.position === "left") {
-      //   contentWrapper.style.left = `${left + window.scrollX}px`;
-      //   contentWrapper.style.top = `${
-      //     top + window.scrollY + (height - height2) / 2
-      //   }px`;
-      // } else if (this.position === "right") {
-      //   contentWrapper.style.left = `${left + window.scrollX + width}px`;
-      //   contentWrapper.style.top = `${
-      //     top + window.scrollY + (height - height2) / 2
-      //   }px`;
-      // }
       contentWrapper.style.left = options[this.position].left;
       contentWrapper.style.top = options[this.position].top;
     },

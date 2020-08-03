@@ -9,21 +9,18 @@ export default {
   data() {
     return {
       layoutClass: {
-        hasSider: false
-      }
+        hasSider: false,
+      },
     };
   },
   created() {},
   mounted() {
-    console.log(this.$children);
-    this.$children.forEach(vm => {
+    this.$children.forEach((vm) => {
       if (vm.$options.name === "lemon-sider") {
         this.layoutClass.hasSider = true;
-        console.log(`this.layoutClass`);
-        console.log(this.layoutClass);
       }
     });
-  }
+  },
 };
 </script>
 

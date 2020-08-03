@@ -10,8 +10,8 @@
  
  <script>
 import Vue from "vue";
-import Icon from './icon'
-Vue.component('l-icon',Icon)
+import Icon from "./icon";
+Vue.component("l-icon", Icon);
 export default {
   props: {
     icon: {},
@@ -20,18 +20,18 @@ export default {
       default: "left",
       validator(value) {
         return value === "left" || value === "right";
-      }
+      },
     },
     loading: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     iconName() {
       return `#l-${this.icon}`;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -49,12 +49,13 @@ export default {
   animation: fuck 1s infinite linear;
 }
 .l-button {
-  font-size: var(--font-sizeƒ);
-  height: var(--button--height);
+  cursor: pointer;
+  font-size: 14px;
+  height: 32px;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: 4px;
+  border: 1px solid #999;
+  background: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +64,7 @@ export default {
     order: 2;
   }
   > .icon {
-    order: 1; 
+    order: 1;
     margin-right: 0.3em;
   }
   &.icon-right {
@@ -78,13 +79,12 @@ export default {
   }
   &:hover {
     z-index: 1;
-    border-color: var(--border-color-hover);
+    border-color: #666;
   }
 
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: #eee;
   }
-
   &:focus {
     outline: none;
   }

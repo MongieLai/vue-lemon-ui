@@ -62,7 +62,6 @@ new Vue({
                 closeButton: {
                     message: '关闭',
                     callback: () => {
-                        console.log('123123123')
                     }
                 },
                 position: 'middle',

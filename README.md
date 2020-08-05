@@ -8,8 +8,6 @@
 
 ## 框架详细介绍[文档](https://mongielee.gitee.io/lemon-ui-docs/#/development/recommend)
 
-
-##
 ## 使用本框架前，请在css中开启border-box
 ``` 
 *,
@@ -39,7 +37,7 @@ new Vue({
   render: h => h(App),
 }).$mount('#app')
 ```
-至此，一个基于 Vue 和 LemonUI 的开发环境已经搭建完毕，现在就可以编写代码了。各个组件的使用方法请参阅它们各自的文档。
+至此，一个基于 Vue 和 LemonUI 的开发环境已经搭建完毕，现在就可以编写代码了。各个组件的使用方法请参阅它们各自的[文档](https://mongielee.gitee.io/lemon-ui-docs/#/development/recommend)。
 
 ## 联系方式
 邮箱：le30n@outlook.com

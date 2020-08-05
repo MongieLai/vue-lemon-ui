@@ -5,50 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>框架测试用页面</title>
 </head>
 <style>
-	* {
-		margin: 0;
-		padding: 0;
+	*,
+	*::before,
+	*::after {
+
 		box-sizing: border-box;
-	}
-
-	:root {
-		--button--height: 32px;
-		--font-size: 14px;
-		--button-bg: white;
-		--button-active-bg: #eee;
-		--color: #999;
-		--border-radius: 4px;
-		--border-color: #999;
-		--border-color-hover: #666;
-	}
-
-
-	body {
-		font-size: var(--font-size)
-	}
-
-	.icon {
-		width: 1em;
-		height: 1em;
-		vertical-align: -0.15em;
-		fill: currentColor;
-		overflow: hidden;
-	}
-
-	.sider {
-		width: 200px;
-		background-color: #333;
-	}
-
-	.header {
-		background-color: #666;
-	}
-
-	.footer {
-		background-color: #666;
 	}
 </style>
 
@@ -58,131 +22,6 @@
 
 <body>
 	<div id="app">
-		 <div class="row">
-			<l-button icon="setting">点击</l-button>
-			<l-button>点击</l-button>
-			<l-button icon="left" @click="loading1=!loading1" :loading="loading1" icon-position="right">收到</l-button>
-			<l-button icon="download" icon-position="left">收到</l-button>
-			<l-button-group>
-				<l-button icon="left" icon-position="left">收到</l-button>
-				<l-button icon="right" icon-position="left">收到</l-button>
-			</l-button-group>
-		</div>
-		<div class="row">
-			<button @click='hh'>1</button>
-		</div><!--
-		<div class="row">
-			<l-input value="错误状态" error=这是一个错误状态></l-input>
-			<l-input v-model='inputMessage'></l-input>
-			<l-input value='禁用状态' disabled></l-input>
-			<l-input value="只读状态" readonly></l-input>
-		</div>
-
-		<div class="row">
-			<l-row gutter='20' align='center'>
-				<l-col :span='4' :phone='{span:12}' :ipad='{span:10}' :wide-pc='{span:2}'>
-					1 </l-col>
-				<l-col :span='20' :phone='{span:12}' :ipad='{span:14}' :wide-pc='{span:22}'>2
-				</l-col>
-			</l-row>
-		</div>
-
-		<div class="row">
-			<l-layout style="height:100vh">
-				<l-sider>侧边栏</l-sider>
-				<l-layout>
-					<l-header>头部</l-header>
-					<l-content></l-content>内容区域</l-content>
-					<l-footer>脚步</l-footer>
-				</l-layout>
-			</l-layout>
-		</div> -->
-		<!-- <l-tabs :selected.sync='selectedTab'>
-			<l-tabs-head>
-				<template slot="actions">
-					<button>设置</button>
-				</template>
-				<l-tabs-item name='news' disabled>
-					<l-icon name='setting'></l-icon>新闻
-				</l-tabs-item>
-				<l-tabs-item name='sports'>体育</l-tabs-item>
-			</l-tabs-head>
-			<l-tabs-body>
-				<l-tabs-pane name='news'>习近平今天</l-tabs-pane>
-				<l-tabs-pane name='sports'>Nba</l-tabs-pane>
-			</l-tabs-body>
-		</l-tabs> -->
-
-		<l-popover position='top' style="margin: 100px;">
-			<template slot='content' slot-scope='{close}'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-				<l-button @click='close'>点我关闭</l-button>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover position='left' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover position='right' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover position='bottom' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-
-
-		<l-popover trigger='hover' position='top' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover trigger='hover' position='left' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover trigger='hover' position='right' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-popover trigger='hover' position='bottom' style="margin: 100px;">
-			<template slot='content'>
-				<div>asdasdasdasdaskljdjaskljfklasjflkasjfklas</div>
-			</template>
-			<l-button>点我</button>
-		</l-popover>
-
-		<l-collapse :selected.sync='selectedTab2' >
-			<l-collapse-item name='1' title="体育频道">
-				傻逼杜晓军
-			</l-collapse-item>
-			<l-collapse-item name='2' title="娱乐频道">
-				大傻逼杜晓军
-			</l-collapse-item>
-		</l-collapse>
-
-		<div style="height: 200px;"></div>
-
 	</div>
 	<script src="./src/app.js"></script>
 	<script src="//at.alicdn.com/t/font_1906917_b7gf46r58hn.js"></script>

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "LemonPane",
   inject: ["eventBus"],
   props: {
     name: {

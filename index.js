@@ -5,10 +5,10 @@ import Layout from './plugin/layout'
 import Popover from './plugin/popover'
 import Toast from './plugin/toast'
 import Tab from './plugin/tab'
-import Accordion from './plugin/accordion'
+import Collapse from './plugin/collapse'
 
 export default {
-    Button, Input, Layout, Container, Popover, Toast, Tab, Accordion,
+    Button, Input, Layout, Container, Popover, Toast, Tab, Collapse,
     install(Vue, options) {
         Vue.use(Button)
         Vue.use(Input)
@@ -17,6 +17,6 @@ export default {
         Vue.use(Popover)
         Vue.use(Toast)
         Vue.use(Tab)
-        Vue.use(Accordion)
+        Vue.use(Collapse)
     }
 }

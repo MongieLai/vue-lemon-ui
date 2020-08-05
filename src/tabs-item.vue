@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$blue: blue;
+$blue: rgb(217, 179, 0);
 .tabs-item {
   cursor: pointer;
   flex-shrink: 0;

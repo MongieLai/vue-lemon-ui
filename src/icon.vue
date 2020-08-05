@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name:'LemonIcon',
   props: ["name"],
   computed: {
     iconName() {

@@ -6,10 +6,10 @@
 
 <script>
 let porpsList = ["span", "offset", "phone", "narrow-pc", "pc", "wide-pc"];
-const validator = value => {
+const validator = (value) => {
   let keys = Object.keys(value);
   let valid = true;
-  keys.forEach(key => {
+  keys.forEach((key) => {
     if (!porpsList.includes(key)) {
       valid = false;
     }
@@ -17,13 +17,14 @@ const validator = value => {
   return valid;
 };
 export default {
+  name:'LemonCol',
   props: {
     span: { type: [Number, String] },
     offset: { type: [Number, String] },
     phone: { type: Object, validator },
     ipad: { type: Object, validator },
     narrowPc: { type: Object, validator },
-    widePc: { type: Object, validator }
+    widePc: { type: Object, validator },
   },
   data() {
     return { gutter: 0 };
@@ -41,7 +42,7 @@ export default {
         tempArr.push(`offset-${str}${obj.offset}`);
       }
       return tempArr;
-    }
+    },
   },
   computed: {
     colClasses() {
@@ -52,22 +53,26 @@ export default {
         ...createClasses(phone, "phone-"),
         ...createClasses(ipad, "ipad-"),
         ...createClasses(narrowPc, "narrow-pc-"),
-        ...createClasses(widePc, "wide-pc-")
+        ...createClasses(widePc, "wide-pc-"),
       ];
     },
     colStyle() {
       return {
         paddingLeft: this.gutter / 2 + "px",
-        paddingRight: this.gutter / 2 + "px"
+        paddingRight: this.gutter / 2 + "px",
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .col {
-  border: 1px solid red;
+  @for $i from 1 through 24 {
+    &-#{$i} {
+      width: ($i/24) * 100%;
+    }
+  }
 
   @media (min-width: 0px) {
     $class-prefix: col-phone-;

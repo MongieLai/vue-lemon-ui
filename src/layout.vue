@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "LemonLayout",
   data() {
     return {
       layoutClass: {
@@ -16,7 +17,7 @@ export default {
   created() {},
   mounted() {
     this.$children.forEach((vm) => {
-      if (vm.$options.name === "lemon-sider") {
+      if (vm.$options.name === "LemonSider") {
         this.layoutClass.hasSider = true;
       }
     });

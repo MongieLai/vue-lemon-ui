@@ -7,6 +7,7 @@
 <script>
 import Vue from "vue";
 export default {
+  name: "LemonTabs",
   props: {
     selected: {
       type: String,
@@ -33,7 +34,7 @@ export default {
   methods: {},
   mounted() {
     if (this.$children.length === 0) {
-      console && console.log && console.warn("tabs没有子组件，且子组件应该为l-tabs-head和l-tabs-body");
+      console && console.log && console.warn("tabs的子组件应该为l-tabs-head和l-tabs-body");
     }
     this.$children.forEach(vm => {
       if (vm.$options.name === "LemonTabsHead") {

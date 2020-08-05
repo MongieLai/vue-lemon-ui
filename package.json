@@ -1,7 +1,7 @@
 {
-  "name": "limengjie-test-uui",
-  "version": "0.0.13",
-  "description": "这是一个基于Vue的UI框架",
+  "name": "vue-lemon-ui",
+  "version": "1.0.1",
+  "description": "LemonUI是一个基于Vue的UI框架",
   "main": "dist/index.js",
   "scripts": {
     "test": "parcel build test/* --no-minify && karma start --single-run",

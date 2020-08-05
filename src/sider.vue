@@ -1,31 +1,34 @@
 <template>
   <transition name="fade">
-    <div class="sider" v-if="vsible">
+    <div class="sider">
+      <slot></slot>
+    </div>
+    <!-- <div class="sider" v-if="vsible">
       <slot></slot>
       <button @click="vsible=false">X</button>
-    </div>
+    </div>-->
   </transition>
 </template>
 
 <script>
 export default {
-  name: "lemon-sider",
+  name: "LemonSider",
   data() {
     return {
-      vsible: true
+      // vsible: true,
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   margin-left: -200px;
-}
+} */
 .sider {
   position: relative;
   button {

@@ -13,6 +13,7 @@ import Vue from "vue";
 import Icon from "./icon";
 Vue.component("l-icon", Icon);
 export default {
+  name: "LemonButton",
   props: {
     icon: {},
     iconPosition: {

@@ -10,7 +10,7 @@ import Header from './header.vue'
 import Footer from './footer.vue'
 import Content from './content.vue'
 import Sider from './sider.vue'
-import plugin from './plugin.js'
+import plugin from '../plugin/toast.js'
 import Tabs from './tabs.vue'
 import TabsHead from './tabs-head.vue'
 import TabsItem from './tabs-item.vue'
@@ -28,7 +28,6 @@ Vue.component('l-button-group', ButtonGroup)
 Vue.component('l-input', Input)
 Vue.component('l-row', Row)
 Vue.component('l-col', Col)
-Vue.component('l-layout', Col)
 Vue.component('l-layout', Layout)
 Vue.component('l-header', Header)
 Vue.component('l-content', Content)
@@ -45,28 +44,5 @@ Vue.component('l-collapse-item', CollapseItem)
 
 
 new Vue({
-    el: '#app',
-    data() {
-        return {
-            loading1: true,
-            inputMessage: 'test',
-            selectedTab: 'sports',
-            selectedTab2: ['1']
-        }
-    },
-    methods: {
-        xxx(e) {
-        },
-        hh() {
-            this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字', {
-                closeButton: {
-                    message: '关闭',
-                    callback: () => {
-                    }
-                },
-                position: 'middle',
-                autoClose: false
-            })
-        }
-    }
+    el: '#app'
 })

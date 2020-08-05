@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-head">
+  <div class="tabs-head" ref="header">
     <slot></slot>
     <div class="line" ref="line"></div>
     <div class="actions-wrapper">
@@ -15,16 +15,17 @@ export default {
   mounted() {
     this.eventBus.$on("update:selected", (item, vm) => {
       const { width, left } = vm.$el.getBoundingClientRect();
-      this.$refs.line.style.left = `${left}px`;
+      const { left: left2 } = this.$refs.header.getBoundingClientRect();
+      this.$refs.line.style.left = `${left - left2}px`;
       this.$refs.line.style.width = `${width}px`;
     });
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 $tab-height: 40px;
-$blue: blue;
+$blue: rgb(217, 179, 0);
 .tabs-head {
   position: relative;
   display: flex;

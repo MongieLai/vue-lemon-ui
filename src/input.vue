@@ -21,26 +21,27 @@
 <script>
 import Icon from "./icon";
 export default {
+  name: "LemonInput",
   components: { Icon },
   data() {
     return {};
   },
   props: {
     value: {
-      type: String
+      type: String,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     readonly: {
       type: Boolean,
-      default: false
+      default: false,
     },
     error: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 

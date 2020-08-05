@@ -21,28 +21,28 @@ export default {
       default: 1,
       validator(value) {
         return value === false || typeof value === "number";
-      }
+      },
     },
     closeButton: {
       type: Object,
       default() {
         return {
           message: "关闭",
-          callback: undefined
+          callback: undefined,
         };
-      }
+      },
     },
     enableHtml: {
       type: Boolean,
-      default: false
+      default: false,
     },
     position: {
       type: String,
       default: "top",
       validator(value) {
         return ["top", "middle", "bottom"].indexOf(value) >= 0;
-      }
-    }
+      },
+    },
   },
   mounted() {
     this.execAutoClose();
@@ -51,9 +51,9 @@ export default {
   computed: {
     postionClass() {
       return {
-        [`position-${this.position}`]: true
+        [`position-${this.position}`]: true,
       };
-    }
+    },
   },
   methods: {
     execAutoClose() {
@@ -81,8 +81,8 @@ export default {
       if (this.closeButton && typeof this.closeButton.callback === "function") {
         this.closeButton.callback(this);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -124,6 +124,7 @@ $line-color: #777;
 $animation-delay: 500ms;
 
 .wrapper {
+  z-index: 999;
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
@@ -152,7 +153,6 @@ $animation-delay: 500ms;
     }
   }
   .toast {
-    font-size: $font-size;
     min-height: $toast-min-height;
     line-height: 1.8;
     display: flex;

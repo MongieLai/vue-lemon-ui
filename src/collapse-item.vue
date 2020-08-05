@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name:'LemonCollapseItem',
   props: {
     title: {
       type: String,

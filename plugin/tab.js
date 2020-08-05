@@ -1,14 +1,14 @@
-import Layout from '../src/layout.vue'
-import Header from '../src/header.vue'
-import Sider from '../src/sider.vue'
-import Content from '../src/content.vue'
-import Footer from '../src/footer.vue'
+import Tabs from '../src/tabs.vue'
+import TabsHead from '../src/tabs-head.vue'
+import TabsItem from '../src/tabs-item.vue'
+import TabsBody from '../src/tabs-body.vue'
+import TabsPane from '../src/tabs-pane.vue'
 export default {
     install(Vue, options) {
-        Vue.component('l-layout', Layout)
-        Vue.component('l-header', Header)
-        Vue.component('l-sider', Sider)
-        Vue.component('l-content', Content)
-        Vue.component('l-footer', Footer)
+        Vue.component('l-tabs-head', TabsHead)
+        Vue.component('l-tabs-item', TabsItem)
+        Vue.component('l-tabs-body', TabsBody)
+        Vue.component('l-tabs-pane', TabsPane)
+        Vue.component('l-tabs', Tabs)
     }
 }

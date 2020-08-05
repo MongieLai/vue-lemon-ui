@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "LemonTabsBody",
   inject: ["eventBus"]
 };
 </script>

@@ -1,16 +1,17 @@
 {
   "name": "vue-lemon-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "LemonUI是一个基于Vue的UI框架",
   "main": "dist/index.js",
   "scripts": {
     "test": "parcel build test/* --no-minify && karma start --single-run",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "start": "parcel index.html --no-cache"
+    "start": "parcel index.html --no-cache",
+    "build": "npx parcel build index.js --no-minify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MongieLai/zaolunzi.git"
+    "url": "git+https://github.com/MongieLai/vue-lemon-ui.git"
   },
   "keywords": [
     "vue",
@@ -19,9 +20,9 @@
   "author": "mongielee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MongieLai/zaolunzi/issues"
+    "url": "https://github.com/MongieLai/vue-lemon-ui/issues"
   },
-  "homepage": "https://github.com/MongieLai/zaolunzi#readme",
+  "homepage": "https://github.com/MongieLai/vue-lemon-ui#readme",
   "dependencies": {
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"

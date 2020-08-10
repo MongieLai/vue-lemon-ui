@@ -2,7 +2,7 @@
 
 ## 作者：Mongie Lee
 
-[![Build Status](https://www.travis-ci.org/MongieLai/zaolunzi.svg?branch=master)](https://www.travis-ci.org/MongieLai/zaolunzi)
+[![Build Status](https://www.travis-ci.org/MongieLai/vue-lemon-ui.svg?branch=master)](https://www.travis-ci.org/MongieLai/vue-lemon-ui)
 
 这是我在学习Vue过程中做的一个UI框架，希望对你有用。
 
